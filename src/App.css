@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 18px 28px;
+}
+
+.app-title {
+  text-align: center;
+  color: #7b8d93;
+  font-weight: normal;
+  font-size: 32px;
+  margin: 0 0 18px;
+}
+
+.nav-links {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nav-link-btn {
+  background: none;
+  border: none;
+  color: #5b7987;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+
+.nav-link-btn:hover {
+  text-decoration: underline;
+}
+
+.sprite-panel {
+  position: relative;
+}
+
+.floating-controls {
+  position: sticky;
+  top: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  margin: 0 auto 14px;
+  width: min(96%, 1060px);
+  background: rgba(202, 214, 220, 0.96);
+  border: 1px solid #b8c3cb;
+  border-radius: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 18px rgba(75, 95, 103, 0.08);
+}
+
+.search-input,
+.filter-select,
+.sort-toggle,
+.view-toggle {
+  border-radius: 12px;
+  border: 1px solid #b0bec5;
+  background-color: #f9fbfc;
+  font-size: 14px;
+  min-height: 42px;
+  box-sizing: border-box;
+}
+
+.search-input {
+  flex: 1 1 220px;
+  min-width: 160px;
+  max-width: 300px;
+  padding: 0 16px;
+}
+
+.filter-select {
+  flex: 1 1 150px;
+  min-width: 140px;
+  padding: 0 12px;
+}
+
+.sort-toggle,
+.view-toggle {
+  padding: 0 16px;
+  color: #324148;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sort-toggle {
+  flex: 0 0 auto;
+}
+
+.view-toggle {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .floating-controls {
+    border-radius: 16px;
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .search-input,
+  .filter-select,
+  .sort-toggle,
+  .view-toggle {
+    width: 100%;
+    max-width: none;
+    flex-basis: 100%;
+    min-height: 36px;
+    font-size: 13px;
+  }
+
+  .search-input {
+    order: 1;
+  }
+
+  .filter-select:nth-of-type(2) {
+    order: 2;
+  }
+
+  .filter-select:nth-of-type(3) {
+    order: 3;
+  }
+
+  .sort-toggle {
+    order: 4;
+  }
+
+  .view-toggle {
+    order: 5;
+  }
+}
+
+.detail-nav-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.detail-nav-btn {
+  display: inline-block;
+  min-width: 120px;
+}
+
+.sprite-scroll-box {
+  height: calc(100vh - 170px);
+  min-height: 520px;
+  overflow-y: auto;
+  background-color: #f3f3f3;
+  border: 1px solid #d0d0d0;
+  border-radius: 22px;
+  padding: 18px 14px 20px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.sprite-list {
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+}
+
+.sprite-gallery {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.sprite-item,
+.gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 76px;
+}
+
+.gallery-item {
+  flex-direction: column;
+  gap: 6px;
+  min-height: 132px;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 14px;
+  padding: 10px 6px;
+}
+
+.sprite-item img,
+.gallery-item img {
+  width: 72px;
+  height: 72px;
+  image-rendering: pixelated;
+  object-fit: contain;
+}
+
+.gallery-item img {
+  width: 92px;
+  height: 92px;
+}
+
+.gallery-name {
+  color: #324148;
+  font-size: 12px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.detail-box {
+  background-color: #f2f2f2;
+  border: 1px solid #d0d0d0;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.detail-sprite-col {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 15px;
+  text-align: center;
+  min-width: 140px;
+}
+
+.detail-sprite-col img {
+  width: 120px;
+  height: 120px;
+  image-rendering: pixelated;
+}
+
+.detail-info-col {
+  flex: 1;
+}
+
+.detail-info-col h2 {
+  margin-top: 0;
+  color: #b05c7d;
+  text-transform: capitalize;
+  font-weight: normal;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.detail-table th,
+.detail-table td {
+  border-bottom: 1px solid #dcdcdc;
+  padding: 6px 4px;
+  text-align: left;
+}
